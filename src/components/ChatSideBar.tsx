@@ -12,24 +12,24 @@ type Props = {
 
 const ChatSideBar = ({ chats, chatId }: Props) => {
   return (
-    <div className="w-full h-screen p-4 soff text-gray-200 bg-gray-900 flex flex-col">
+    <div className="soff flex h-screen w-full flex-col bg-gray-900 p-4 text-gray-200">
       <Link href="/">
-        <Button className="w-full border-dashed border-white border">
-          <PlusCircle className="mr-2 w-4 h-4">New Chat</PlusCircle>
+        <Button className="w-full border border-dashed border-white">
+          <PlusCircle className="mr-2 h-4 w-4">New Chat</PlusCircle>
         </Button>
       </Link>
 
-      <div className="flex-1 gap-2 pb-20 mt-4 overflow-y-auto">
+      <div className="mt-4 flex-1 gap-2 overflow-y-auto pb-20">
         {chats.map((chat) => (
           <Link key={chat.id} href={`/chat/${chat.id}`}>
             <div
-              className={cn("rounded-lg p-3 text-slate-300 flex items-center", {
+              className={cn("flex items-center rounded-lg p-3 text-slate-300", {
                 "bg-blue-600 text-white": chat.id === chatId,
                 "hover:text-white": chat.id !== chatId,
               })}
             >
               <MessageCircle className="mr-2" />
-              <p className="w-full overflow-hidden text-sm truncate whitespace-nowrap text-ellipsis">
+              <p className="w-full overflow-hidden truncate text-ellipsis whitespace-nowrap text-sm">
                 {chat.pdfName}
               </p>
             </div>

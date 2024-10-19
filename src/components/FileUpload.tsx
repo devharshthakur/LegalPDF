@@ -69,7 +69,7 @@ const FileUpload = () => {
     },
   });
   return (
-    <div className="p-2 bg-white rounded-x1">
+    <div className="rounded-x1 bg-white p-2">
       <div
         {...getRootProps({
           className:
@@ -80,15 +80,15 @@ const FileUpload = () => {
         {uploading || isPending ? (
           <>
             {/* loading state*/}
-            <Loader2 className="h-10 w-10 text-blue-500 animate-spin" />
+            <Loader2 className="h-10 w-10 animate-spin text-blue-500" />
             <p className="mt-2 text-sm text-slate-400">
               Spilling Tea to Gemini...
             </p>
           </>
         ) : (
           <>
-            <Inbox className="w-10 h-10 text-blue-500" />
-            <p className="mt-2 text-sm -text-slate-400">Drop PDF here</p>
+            <Inbox className="h-10 w-10 text-blue-500" />
+            <p className="-text-slate-400 mt-2 text-sm">Drop PDF here</p>
           </>
         )}
       </div>

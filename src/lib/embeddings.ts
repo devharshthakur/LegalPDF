@@ -31,7 +31,7 @@ const embeddingModel = genAI.getGenerativeModel({
 export async function getEmbeddings(text: string): Promise<number[]> {
   try {
     // Remove newlines and get the embedding
-    console.log(text)
+    console.log(text);
     const result = await embeddingModel.embedContent(text.replace(/\n/g, " "));
 
     // Extract the embedding from the result

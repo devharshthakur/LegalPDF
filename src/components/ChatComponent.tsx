@@ -77,7 +77,7 @@ const ChatComponent = ({ chatId }: Props) => {
       className="relative max-h-screen overflow-scroll"
       id="message-container"
     >
-      <div className="sticky top-0 inset-x-0 p-2 bg-white h-fit">
+      <div className="sticky inset-x-0 top-0 h-fit bg-white p-2">
         <h3 className="text-xl font-bold">Chat</h3>
       </div>
 
@@ -90,7 +90,7 @@ const ChatComponent = ({ chatId }: Props) => {
             }`}
           >
             <div
-              className={`rounded-lg p-2 max-w-[80%] ${
+              className={`max-w-[80%] rounded-lg p-2 ${
                 message.role === "user"
                   ? "bg-blue-500 text-white"
                   : "bg-gray-200 text-black"
@@ -100,7 +100,7 @@ const ChatComponent = ({ chatId }: Props) => {
                 components={{
                   p: ({ children }) => <p className="mb-2">{children}</p>,
                   ul: ({ children }) => (
-                    <ul className="list-disc pl-4 mb-2">{children}</ul>
+                    <ul className="mb-2 list-disc pl-4">{children}</ul>
                   ),
                   li: ({ children }) => <li className="mb-1">{children}</li>,
                   strong: ({ children }) => (
@@ -117,7 +117,7 @@ const ChatComponent = ({ chatId }: Props) => {
 
       <form
         onSubmit={handleSubmit}
-        className="sticky bottom-0 inset-x-0 px-2 py-4 bg-white"
+        className="sticky inset-x-0 bottom-0 bg-white px-2 py-4"
       >
         <div className="flex">
           <Input
@@ -126,7 +126,7 @@ const ChatComponent = ({ chatId }: Props) => {
             placeholder="Ask any question..."
             className="w-full"
           />
-          <Button type="submit" className="bg-blue-600 ml-2">
+          <Button type="submit" className="ml-2 bg-blue-600">
             <Send className="h-4 w-4" />
           </Button>
         </div>

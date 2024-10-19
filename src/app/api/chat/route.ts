@@ -79,7 +79,7 @@ export async function POST(req: Request) {
     console.error("Error in chat route:", error);
     return NextResponse.json(
       { error: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

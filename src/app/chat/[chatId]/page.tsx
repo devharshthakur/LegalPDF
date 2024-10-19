@@ -26,12 +26,12 @@ const ChatPage = async ({ params: { chatId } }: Props) => {
   }
 
   const currentChat = _chats.find((chat) => chat.id === parseInt(chatId));
-console.log('curr chat=',currentChat)
+  console.log("curr chat=", currentChat);
   return (
     <div className="flex h-screen">
-      <div className="flex w-full max-h-screen">
+      <div className="flex max-h-screen w-full">
         {/* Chat Sidebar */}
-        <div className="flex-[1] max-w-xs overflow-y-auto">
+        <div className="max-w-xs flex-[1] overflow-y-auto">
           <ChatSideBar chats={_chats} chatId={parseInt(chatId)} />
         </div>
 
@@ -41,7 +41,7 @@ console.log('curr chat=',currentChat)
         </div>
 
         {/* Chat Component */}
-        <div className="flex-[3] border-l-4 border-l-slate-200 overflow-y-auto">
+        <div className="flex-[3] overflow-y-auto border-l-4 border-l-slate-200">
           <ChatComponent chatId={parseInt(chatId)} />
         </div>
       </div>

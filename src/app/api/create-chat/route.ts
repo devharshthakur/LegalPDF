@@ -32,13 +32,13 @@ export async function POST(req: Request, res: Response) {
       {
         chat_id: chat_id[0].insertedId,
       },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     console.error(error);
     return NextResponse.json(
       { error: "internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

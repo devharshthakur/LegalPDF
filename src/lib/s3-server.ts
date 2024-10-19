@@ -38,4 +38,3 @@ export async function downloadFromS3(file_key: string): Promise<string> {
     }
   });
 }
-

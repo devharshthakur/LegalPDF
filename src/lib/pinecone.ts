@@ -35,16 +35,16 @@ export async function loadS3IntoPinecone(fileKey: string) {
 
   // 2. split and segment the pdf
   const documents = await Promise.all(pages.map(prepareDocument));
-//   console.log(documents)
+  //   console.log(documents)
   // 3. vectorise and embed individual documents
   const vectors = await Promise.all(documents.flat().map(embedDocument));
-//   console.log(vectors)
+  //   console.log(vectors)
   // 4. upload to pinecone
   const client = await getPineconeClient();
   const pineconeIndex = await client.index("legalpdf");
   const namespace = pineconeIndex.namespace(convertToAscii(fileKey));
-//   console.log(pineconeIndex);
-//   console.log(namespace);
+  //   console.log(pineconeIndex);
+  //   console.log(namespace);
 
   console.log("inserting vectors into pinecone");
   await namespace.upsert(vectors);
@@ -90,6 +90,6 @@ async function prepareDocument(page: PDFPage) {
       },
     }),
   ]);
-  console.log('prepared docs=', docs)
+  console.log("prepared docs=", docs);
   return docs;
 }

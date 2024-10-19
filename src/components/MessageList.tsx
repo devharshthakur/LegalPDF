@@ -11,8 +11,8 @@ type Props = {
 const MessageList = ({ messages, isLoading }: Props) => {
   if (isLoading) {
     return (
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <Loader2 className="w-6 h-6 animate-spin" />
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <Loader2 className="h-6 w-6 animate-spin" />
       </div>
     );
   }
@@ -30,10 +30,10 @@ const MessageList = ({ messages, isLoading }: Props) => {
           >
             <div
               className={cn(
-                "rounded-lg px-3 text-sm py-1 shadow-md ring-1 ring-gray-900/10",
+                "rounded-lg px-3 py-1 text-sm shadow-md ring-1 ring-gray-900/10",
                 {
                   "bg-blue-600 text-white": message.role === "user",
-                }
+                },
               )}
             >
               <p>{message.content}</p>
